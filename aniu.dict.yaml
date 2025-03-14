@@ -1,0 +1,72 @@
+---
+name: aniu
+version: "2025.2.10"
+sort: by_weight # by_weight=权重 original=原始
+import_tables: # 此处是添加用户自定义词库的地方
+  - aniu_main                # 主词库
+  - aniu_pri	               # 个人词库
+  - aniu_spz                 # 生僻字
+
+
+columns:    # 码表格式
+  - text    # 文字
+  - code    # 输入码
+  - weight  # 权重
+  - stem    # 注释
+encoder:
+  exclude_patterns:
+    - '^z.*$'
+  rules:                        # 大写字母表示字序，小写字母表示其所跟随的大写字母所以表的字中的编码序
+    - length_equal: 2           # 对于二字词
+      formula: "AaAbBaBb"       # 取第一字首二码、第二字首二码
+    - length_equal: 3           # 对于三字词
+      formula: "AaBaCaCb"       # 取第一字首码、第二字首码、第三字首码、第三字二笔码
+    - length_in_range: [4, 10]  # 对于四至十字词
+      formula: "AaBaCaZa"       # 取第一字首码，第二字尾码、第三字首码、最后一字尾码
+# 单字权重在8以上的是通用规范汉字，除此之外，权重为5的是gb18030-2000的汉字，权重为3的是gb18030-2005的汉字
+# 倒数第二行的"# no comment"表示取消‘#’的注释功能
+# stem：©表示容错
+...
+
+## 主词扩展
+
+
+## 时政新词☭
+
+
+## 表情符号☻
+
+
+## 英文
+
+
+## 社会✍
+
+
+## 物理✍
+
+
+## 哲学✣
+
+
+## AI专用☯
+
+
+## 网络热词☼
+
+
+## 个性词条❀
+
+
+## 人名•
+
+
+## 私密㊙（定时转移）
+
+
+## 无注释（#）词条
+# no comment
+#	zv	110
+##	zvv	100
+###	zvv	90
+####	zvv	80

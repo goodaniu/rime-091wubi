@@ -1,0 +1,91 @@
+#!/usr/bin/env bash
+# set -e
+#
+dictmain=aniu_main.dict.yaml  # 主要词库文件
+dictspz=aniu_spz.dict.yaml    # 生僻字
+dictpri=aniu_pri.dict.yaml    # 个人词条，不方便公开的
+
+# 进入Rime工作目录
+#cd ~/.local/share/fcitx5/rime
+# 我使用了stow备份dotfiles,所以工作目录有点不一样。
+cd ~/doc/mydot/.local/share/fcitx5/rime
+
+function chaxun(){
+	# 以编码查询
+	# cd ~/.local/share/fcitx5/rime
+	if echo $1 |grep -q ",";then
+		local str1=`echo $1|cut -d "," -f1`
+		echo -e "\n\e[33m列出形如\e[0m$str1\e[33m的单字编码：\n————————————————————————————————————\e[0m"
+        grep -Pnh "^.\t$str1\b" $dictmain $dictspz  #|sed -r -e "/\t5/d"
+		echo -e "\e[33m————————————————————————————————————\e[0m"
+		return
+	elif echo $1 |grep -q "[a-z]"; then
+		echo -e "\n\e[33m列出形如\e[0m$1\e[33m的编码：\n————————————————————————————————————\e[0m"
+		grep -Pn "\b$1\b" $dictmain $dictspz $dictpri|sed -r "/\t3$/d;s/.dict.yaml//g"
+		echo -e "\e[33m————————————————————————————————————\e[0m"
+		return
+	fi
+	# 以汉字查询编码
+	echo -e "\n\e[33m列出\e[0m$1\e[33m的编码：\n————————————————————————————————————\e[0m"
+	grep -Pn  "^$1\t" $dictmain $dictspz $dictpri|sed -r "s/.dict.yaml//g"
+
+	echo -e "\e[33m————————————————————————————————————\e[0m"
+#     python -c "print('\033[1;34m=\033[0m'*10)" # 重复打印“=”
+}
+
+
+case "$1" in
+	# -h|--help|"")
+	# 	h h ri;;
+  -d)
+        line=$(awk -v str1=$2 -F "\t" '$2==str1{print $0}' $dictmain|fzf --prompt="remove:")
+        [[ -n $line ]] && sed -i "/^$line/d" $dictmain && echo -e "已删除编码：\e[91m$line\e[0m"
+    ;;
+	-c)
+        line=$(awk -v str1=$2 -F "\t" '$2==str1{print $0}' $dictmain|fzf --prompt="change:")
+        [[ -z $line ]] && exit 130
+        echo -e "\e[34m$line\e[0m"
+        echo "请输入新的编码或权重："
+        read -r input1 input2 input3
+        if grep -q '^[[:digit:]]*$' <<< $input1  ; then
+            str1=$(echo $line |awk -v str0=$input1 '{$3=str0;print}')
+            sed -i "/^$line/c $str1" $dictmain
+			echo -e "已将编码权重更改为：\e[34m$input1\e[0m"
+        elif [[ -n $input3 ]]; then
+            sed -i "/^$line/c $input1\t$input2\t$input3" $dictmain
+            echo -e "已将编码替换为：\e[34m$input1\t$input2\t$input3\e[0m"
+        fi
+        ;;
+	-a)
+        line0=$(awk -v str1=$2 -F "\t" '$2==str1{print NR ":\t" $0}' $dictmain|fzf --prompt="append:")
+        num1=$?
+        case "$num1" in
+            0) 
+                line=$(echo $line0|cut -f1 -d:);;
+            1)
+                line0=$(awk -v str1=$2 -F "\t" '$2>str1{print NR ":\t" $0;exit}' $dictmain | fzf --prompt="Insert:")
+                [[ -z $line0 ]] && exit
+                line=$(($(echo $line0 |cut -f1 -d ":") - 1));;
+            *)
+                exit $num1;;
+        esac
+        
+        echo -e "\e[34m$line0\e[0m"
+        echo "请输入要插入的编码："
+        read -r input1
+        input2=$(echo $input1|sed -r "s/ +/\t/g")
+        sed -i "$line a $input2" $dictmain
+        echo -e "已插入新的的编码：\e[34m$input2\e[0m"
+		;;
+  -p)
+	    echo -e "$2\t$3\t$4" >> $dictpri
+	    echo -e "已向pri词库追加新的编码：\e[34m$2\t$3\t$4\e[0m";;
+  -v)
+      fiel1=($(fd -t f --max-depth=1 aniu|fzf -q " $2"))
+      [[ -n "$fiel1" ]] && nvim "${fiel1[@]}"
+      ;;
+	*)
+		chaxun $@
+		;;
+esac
+
