@@ -8,14 +8,17 @@
 
 # 091五笔，点儿词库
 
-在**王永民**发明的五笔方案基础上，**行走的风景**改良了字根及词库，称为**091五笔**。
+在**王永民**发明的86五笔基础上，**行走的风景**改良了字根及词库，称为**091五笔**。
 
 后来由**晓览**（[晓览的网盘](http://gaokuan.ysepan.com/)）接手，又增添、删改了大量的字根和词条，最终命名为**点儿词库**，按年或季度更新。我询问过他是否可以放在GitHub上，他说可以**随意传播**这个词库。
+
 ## 1. dianer
 
-**dianer方案**是来自晓览的原版点儿词库（2025春版），主要是改成Rime格式，增加权重，未删改任何词条。
+**dianer方案**中的词条来自晓览的原版点儿词库（2025春版），主要是改成Rime格式，增加权重，未删改任何词条，共有21.9万多词条。
 
-词条在`dianer.dict.yaml`文件中。生僻字在`aniu_spz.dict.yaml`中，已在dianer.dict.yaml中挂载，默认过滤生僻字，可按快捷键`Ctrl+0`选择相应的选项启用。
+词条在`dianer.dict.yaml`文件中。
+
+生僻字在`aniu_spz.dict.yaml`中，已在dianer.dict.yaml中挂载，默认过滤生僻字，可按快捷键`Ctrl+0`选择相应的选项启用。
 
 ## 2. aniu
 **aniu方案**是基于点儿词库2024秋版，然后结合我自身的使用习惯，进行了一些个性化删改。
@@ -75,7 +78,7 @@
  ## 使用说明
  这是处理rime输入法码表的脚本。
 
-- `ri code`        查询形如`code`的编码，支持以`.`替代字母，如`wu ad.``wu ad.\?`
+- `ri code`        查询形如`code`的编码，支持以`.`替代字母，如`ri ad.` , `ri ad.\?`
 - `ri code,`       查询以`code`开头的单字编码
 - `ri 词条`        查询`词条`的编码，支持以`.`代替汉字
 - `ri -d code`                  删除词条
@@ -85,12 +88,14 @@
 - `ri -v <aniu>`    使用打开`aniu`文件
 
 
-上述**code**指的是词条的编码，修改、删除、添加时不要多选。
+上述code指的是词条的编码。
+
+修改、删除、添加时**不要多选**。
 
  # 其它
  至于其它方案`numbers` （大写数字） 、 `wubi86_jidian_pinyin`（86五笔拼音） 、 `wubi86_jidian_trad`（简入繁出86五笔） 、 `wubi86_jidian_trad_pinyin`（简入繁出86五笔拼音） ，方案来自 [KyleBing](https://github.com/KyleBing/wubi-jidan-dict)。我没有使用，也没有测试过，只是放在那里，如果觉得不需要，可以删除。
 
- `dev.suyu_emu.suyu.svg`和`wubi86_jidian.ico`是两个图标文件，删除了也不影响什么。
+ `dev.suyu_emu.suyu.svg`和`wubi86_jidian.ico`是两个图标文件，`imgs`文件夹中是fcitx5候选栏上的图标，比默认的颜色加深了些。删除它们并不影响什么。
 
  # 推荐
 五笔学习推荐B站[晓览YMPA](https://space.bilibili.com/108585624)的视频。
