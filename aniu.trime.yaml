@@ -7,7 +7,7 @@
 
 config_version: "3.0"
 name: 同文风改(aniu)          #方案名称
-author: 风花絮，        #作者信息
+author: 风花絮        #作者信息
 
 ##======定制个性化键盘======
 mystyle: 
@@ -75,7 +75,7 @@ style:
   comment_font: comment.ttf #编码提示字体
   comment_height: 14 #编码提示区高度
   comment_on_top: true #编码提示在上方或右侧
-  comment_text_size: 12 #编码提示字号
+  comment_text_size: 10 #编码提示字号
   hanb_font: hanb.ttf #扩充字体
   horizontal: true #水平模式
   horizontal_gap: *hgap #键水平间距
@@ -106,7 +106,7 @@ style:
   locale: zh_CN #缺省语言 zh_TW,zh_CN,zh_HK,""
   keyboard_height: 250 #锁定键盘高度，避免切换时键盘高度变化而造成闪烁
   keyboard_height_land: 200 #锁定横屏下键盘高度，避免切换时键盘高度变化而造成闪烁
-  keyboard_padding_land: 120 #横屏模式下，屏幕左右两侧与键盘的距离
+  keyboard_padding_land: 140 #横屏模式下，屏幕左右两侧与键盘的距离
   preview_font: latin.ttf #按键提示字体
   preview_height: 56 #按键提示高度
   preview_offset: -32 #按键提示纵向偏移
@@ -238,12 +238,12 @@ preset_color_schemes:
     th3: *color1 #第三行文字颜色
     bh4: *color2 #第四行背景色
     th4: *color1 #第四行文字颜色
-    ksc4: *color8 #符号背景
-    c1: *color4
-    c2: *color4
-    c3: *color4
-    c4: *color4
-    c7: *color6
+    ksc4: *color8 #左下角两键符号颜色
+    c1: *color4 #Shift键背景
+    c2: *color4 #退格键背景
+    c3: *color4 #数字/主键盘背景
+    c4: *color4 #中英文切换键背景
+    c7: *color6 #回车键背景
 
 
 #--------配色开始----------------#
@@ -278,6 +278,7 @@ preset_color_schemes:
     key_symbol_color: 0xff838383
     key_text_color: *color9
     keyboard_back_color: 0xfff0f0f0
+    # keyboard_background: 0xffC03F3C
     label_color: 0xff3266a0
     off_key_back_color: 0xffc8ccd0
     off_key_text_color: 0xff838383
@@ -319,6 +320,7 @@ liquid_keyboard:
   single_width: 60    #single类型的按键宽度
   vertical_gap: 8     #纵向按键间隙
   margin_x: 2       #左右按键间隙的1/2
+  ascii_mode: 1
   fixed_key_bar: # 固定按键条
     position: right  # 摆放位置（在滚动区域的……） top|bottom|left|right
     keys: # 按键（显示名称为对应的label，不能放太多）
@@ -340,8 +342,16 @@ liquid_keyboard:
     type: HISTORY
   markdown:
     name: "mark"
-    type: VAR_LENGTH
-    keys: ["|||\n|:-:|:-:|\n|||", "```\n\n```"]
+    type: SYMBOL
+    keys: #骰子
+      - {click: '{表格}', label: 表格}
+      - {click: '{代码块}{Up}{Up}', label: 代码块}
+      - {click: '{链接}{Left}{Left}{Left}',label: 链接}
+      - {click: '{标注}',label: 标注}
+      - {click: '****{Left}{Left}',label: 加粗}
+      - {click: '{待办}',label: 待办}
+      
+      
   emoji:
     type: SINGLE
     keys: "🙂😂🤣😆🙃😅🥺😎👀🙈🙉🙊☹😑😄🤐😨😱🌚🌝🤔❤💔🌹💣👌👍😣😥😮🙄😏😕😯😪😫😴😌🤑😉😋😎😍😘😚😛😜😝😒😓😔😲😷🤒😇🤓🤗🤕🙁😖😞😟😤😢😭😦😧😨😩😬😰😳😵😡😠☝✌🖕👎🙏🤘👏💪💋☘🍀🌸☕🍵🍺🍻🍦🍬🍚🍜🍲🍖🎂💤"
@@ -446,7 +456,7 @@ liquid_keyboard:
   ascii:
     type: SINGLE
     name: 英文
-    keys: ",.?!:;/\\|*-+=^$`'\"^~@#%&()[]{}<>_nt"
+    keys: ",.?!:;/\\|*-+=`'\"^~@#()[]{}<>_%$&·nt"
   ids:
     type: SINGLE
     name: IDS
@@ -501,8 +511,7 @@ preset_keyboards:
         },
       {click: t, long_click: T, label_symbol: '→', swipe_up: Right1,__include: mystyle/key_abc1},
       {click: y, long_click: Y, label_symbol: '…', swipe_up: '……',__include: mystyle/key_abc1},
-      { click: u,
-          long_click: U,
+      { click: u, long_click: U,
           label_symbol: '`',
           swipe_up: '`',
           __include: mystyle/key_abc1
@@ -512,37 +521,28 @@ preset_keyboards:
       {click: p, long_click: P, label_symbol: '.', swipe_up: 'juhao', symbol_text_size: 12,__include: mystyle/key_abc1},
       # 第二行
             {click: 'a', long_click: A, label_symbol: '—', swipe_up: '——',__include: mystyle/key_abc2},
-      {click: 's',
-          long_click: S,
+      {click: 's', long_click: S,
           label_symbol: '-',
           swipe_up: '-',
           __include: mystyle/key_abc2},
-      {click: 'd',
-          long_click: D,
-          label_symbol: '<>',
-          swipe_up: '<>{Left}',
-          swipe_down: '{khj}{Left}',
+      {click: 'd', long_click: D,
+          label_symbol: '☑', 
+          swipe_up: select_all,
           __include: mystyle/key_abc2},
-      {click: 'f',
-          long_click: F,
-          label_symbol: '{}',
-          swipe_up: '{}{Left}',
-#          swipe_down: '{khd}{Left}',
+      {click: 'f', long_click: F,
+          label_symbol: '✂', 
+          swipe_up: cut,
           __include: mystyle/key_abc2},
-      {click: 'g',
-          long_click: G,
-          label_symbol: '[]',
-          swipe_up: '[]{Left}',
-          swipe_down: '{khz}{Left}',
+      {click: 'g', long_click: G,
+          label_symbol: '❐', 
+          swipe_up: copy,
           __include: mystyle/key_abc2},
-      {click: 'h',
-          long_click: H,
-          label_symbol: '()',
-          swipe_up: '(){Left}',
-          swipe_down: '{khx}{Left}',
+      {click: 'h', long_click: H,
+          label_symbol: '📋', 
+          # swipe_down: paste_clip, 
+          swipe_up: paste,
           __include: mystyle/key_abc2},
-      {click: 'j',
-          long_click: J,
+      {click: 'j', long_click: J,
           label_symbol: '“”',
           swipe_up: '“”{Left}',
           swipe_down: '{shuangyin}{shuangyin}{Left}',
@@ -551,13 +551,29 @@ preset_keyboards:
       {click: 'l', long_click: L, label_symbol: '"', swipe_up: 'shuangyin', swipe_down: '"', __include: mystyle/key_abc2},
       # 第三行
       {click: Shift_L, composing: delimiter, swipe_up: Tab, hilited_key_back_color: benter, key_back_color: c1, key_text_color: tbs, width: 11}, 
-      {click: z, __include: mystyle/key_abc3, long_click: Z, label_symbol: '☑', swipe_up: select_all}, 
-      {click: x, __include: mystyle/key_abc3, long_click: X, label_symbol: '✂', swipe_up: cut}, 
-      {click: c, __include: mystyle/key_abc3, long_click: C, label_symbol: '❐', swipe_up: copy}, 
-      {click: v, __include: mystyle/key_abc3, long_click: V, label_symbol: '📋', swipe_down: paste_clip, swipe_up: paste}, 
-      {click: b, __include: mystyle/key_abc3, long_click: B, label_symbol: ':', swipe_up: ":"}, 
-      {click: n, __include: mystyle/key_abc3, long_click: N, label_symbol: ';', swipe_up: ";",}, 
-      {click: m, __include: mystyle/key_abc3, long_click: M, swipe_up: "_", label_symbol: '_'}, 
+      {click: z, long_click: Z,
+          label_symbol: '<>',
+          swipe_up: '<>{Left}',
+          swipe_down: '{khj}{Left}',
+          __include: mystyle/key_abc3}, 
+      {click: x, long_click: X,
+          label_symbol: '[]',
+          swipe_up: '[]{Left}',
+          swipe_down: '{khz}{Left}',
+          __include: mystyle/key_abc3}, 
+      {click: c, long_click: C,
+          label_symbol: '{}',
+          swipe_up: '{}{Left}',
+#          swipe_down: '{khd}{Left}',
+          __include: mystyle/key_abc3}, 
+      {click: v, long_click: V,
+          label_symbol: '()',
+          swipe_up: '(){Left}',
+          swipe_down: '{khx}{Left}',
+          __include: mystyle/key_abc3}, 
+      {click: b, long_click: B, label_symbol: ':', swipe_up: ":", __include: mystyle/key_abc3}, 
+      {click: n, long_click: N, label_symbol: ';', swipe_up: ";", __include: mystyle/key_abc3}, 
+      {click: m, long_click: M, swipe_up: "_", label_symbol: '_', __include: mystyle/key_abc3}, 
       {click: BackSpace, swipe_up: Clears, swipe_left: Esc1, key_back_color: c2, key_text_color: tbs, width: 12}, 
       # 第四行
       {click: Keyboard_number, swipe_up: Keyboard_numberb, key_back_color: c3, key_text_color: tgn, key_symbol_color: ksc4, long_click: Theme_settings, width: 16}, 
@@ -611,16 +627,30 @@ preset_keyboards:
       { click: Keyboard_edit, __include: mystyle/funcs},
       { click: VOICE_ASSIST},
       { click: Schema_switchcn, label: "直接切换", __include: mystyle/funcs},
-      { click: Schema_switch, __include: mystyle/funcs},
+      { click: Color_switch, __include: mystyle/funcs},
       { click: IME_switch, __include: mystyle/funcs},
       { click: Share, __include: mystyle/funcs},
-      { click: Deploy备用},
-      { click: Sync备用},
+      { click: Deploy},
+      { click: Sync},
       { click: Keyboard_last_lock, key_back_color: c3},
       { click: Bing, __include: mystyle/funcs},
       { click: liquid_keyboard_clipboard, __include: mystyle/funcs},
       { click: Settings, __include: mystyle/funcs}]
       
+      
+  markdown1:
+    author: "aniu"
+    name: Markdown键盘布局
+    ascii_mode: 1
+    width: 20
+    keys:
+      - {click: 表格}
+      - {click: 代码块}
+      - {click: 链接}
+      - { click: BackSpace, swipe_left: BackToPreviousSyllable, swipe_up: Clears, key_back_color: c2}
+      - { click: Keyboard_last_lock,key_back_color: c3}
+
+
 
 
   letter:
@@ -3765,6 +3795,11 @@ preset_keys:
     label: '编辑'
     select: edit
     send: Eisu_toggle
+  Keyboard_markdown:
+    function: false
+    label: '编辑'
+    select: markdown1
+    send: Eisu_toggle
   liquid_keyboard_ascii:
     command: liquid_keyboard
     label: "En"
@@ -3812,4 +3847,21 @@ preset_keys:
     label: 分享
     command: send
     option: '%s' #分享指定文本: %s或者%1$s为当前字符
+  Deploy: 
+    label: 部署备用
+    # send: function
+    # command: run
+    # option: "com.osfans.trime.action.DEPLOY"
+  Sync:
+    label: 同步备用
+    # send: function
+    # command: run
+    # option: 'com.osfans.trime.action.SYNC_USER_DATA'
+    
+  #========Markdown=======
+  表格: {commit: "|||\n|:-:|:-:|\n|||", label: 表格, functional: false}
+  代码块: {commit: "```\n\n```", label: 代码块, functional: false}
+  链接: {commit: '[]()', label: 链接}
+  标注: {commit: ">[!note] "}
+  待办: {commit: "- [ ] "}
   # =======自定义完毕=======
