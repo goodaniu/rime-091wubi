@@ -14,7 +14,6 @@ patch:
     # - schema: wubi86_jidian             # 86五笔
     - schema: pinyin_simp               # 普通拼音
     - schema: melt_eng                  # 简单英语
-    - schema: dianer                    # 091五笔，点儿词库，官方词条
     # - schema: numbers                   # 大写数字
     # - schema: wubi86_jidian_sin      # 五笔单字
     # - schema: wubi86_jidian_pinyin      # 五笔拼音混输
@@ -23,7 +22,7 @@ patch:
 
   # Menu
   menu:
-    page_size: 5                    # 候选词数量，最多支持 10 个
+    page_size: 9                    # 候选词数量，最多支持 10 个
 
   switcher:
     hotkeys:        # 弹出菜单的快捷键
@@ -59,9 +58,7 @@ patch:
 #      - { when: has_menu, accept: period, send: 3 } # 候选3 用句号选择
       - { when: has_menu, accept: semicolon, send: 2 }  # 候选2 用分号
       - { when: has_menu, accept: apostrophe, send: 3 } # 候选3 用单引号
-      - { when: has_menu, accept: z, send: 3 } # 候选3 用z号
-      - { when: has_menu, accept: 8, send: 4 } # 候选4 用8号
-      - { when: has_menu, accept: 9, send: 5 } # 候选5 用9号
+
 #     - {accept: "Control+1", toggle: next, when: always}
 #     - {accept: "Control+8", toggle: full_shape, when: always}
       # - {accept: "Control+3", toggle: simplification, when: always}

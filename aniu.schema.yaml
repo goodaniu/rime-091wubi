@@ -63,6 +63,11 @@ engine:
 
 # 自动造词功能：参阅： https://github.com/KyleBing/rime-wubi86-jidian#6-%E5%BC%80%E5%90%AF%E8%87%AA%E5%8A%A8%E9%80%A0%E8%AF%8D
 
+menu:
+  page_size: 7
+style:
+  horizontal: false
+
 speller:
   max_code_length: 4                    # 四码上屏
   auto_select: true                     # 四码唯一时，自动上屏
@@ -80,7 +85,7 @@ translator:
   encode_commit_history: false          # 是否对已上屏词自动成词（仅 table_translator 有效）
   preedit_format:                       # 上屏码自定义
    # - xform/.+//
-  comment_format:                       # 提示码自定义
+  comment_format:
     # - xform/.+//                        # 当前默认不提示编码，消除所有候选词后的提示码
     #- xform/~//
 
@@ -120,7 +125,10 @@ punctuator:
 
 key_binder:
   import_preset: default
-
+  bindings:
+    - { when: has_menu, accept: z, send: 3 } # 候选3 用z号
+    - { when: has_menu, accept: 8, send: 4 } # 候选4 用8号
+    - { when: has_menu, accept: 9, send: 5 } # 候选5 用9号
 
 recognizer:
   import_preset: default
