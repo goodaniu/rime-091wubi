@@ -1,0 +1,4 @@
+patch:
+  __include: shouji:/kuaijiejian
+  __include: shouji:/houxuanlan
+  "menu/page_size": 7      

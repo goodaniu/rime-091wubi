@@ -1,0 +1,46 @@
+# 本补丁主要用途：在PC端的配置复制过来后，本补丁会进行手机端定制，便于管理。PC端建议将本补丁删除或改名。
+# 本补丁的部分命令依赖于主题文件aniu.trime.yaml的定义。
+
+## 候选栏手机端修正
+houxuanlan:
+  "switches/+":
+    - options: [ _key_Schema_switchcn ]   # 和上一个方案相互切换
+      states: [ "切" ]
+    - options: [ _key_liquid_keyboard_clipboard ]    #打开剪贴板
+      states: [ "剪贴" ]
+    - options: [ _keyboard_edit ]    # 编辑键盘，需要主题中定制键盘
+      reset: 0
+      states: [ "编辑" ]
+    - options: [ _key_grave ]    # 即反引号`
+      states: [ "查" ]
+    - options: [ _key_Hide ]    # 收起键盘
+      states: [ "▼ " ]
+    - options: [ _key_slash ]    # 输入特殊符号
+      states: ["/"]
+    - options: [ _key_VOICE_ASSIST ] #语音键
+      states: ["语音备用"]
+  "switches/@0": null      #取消第一项，我觉得用不上
+  
+  
+## 快捷键手机端修正
+kuaijiejian:
+  "key_binder/bindings/+": 
+    # - { when: always, accept: Control+Shift+6, select: .next } #切换输入方案
+    - { when: has_menu, accept: semicolon, send: Nothing }  # 候选2 取消用分号
+    - { when: has_menu, accept: apostrophe, send: Nothing } # 候选3 取消用单引号
+    - { when: has_menu, accept: comma, send: 2 }  # 候选2 用逗号
+    - { when: has_menu, accept: period, send: 3 } # 候选3 用句号
+  "key_binder/bindings/@0": null  #取消z键选取第三候选项上屏
+
+
+
+
+## 供default.custom.yaml引用
+quanju:
+  "key_binder/bindings/+": 
+    - { when: always, accept: Control+Shift+6, select: .next } #切换输入方案
+  "key_binder/bindings/@0": 
+    - { when: has_menu, accept: comma, send: 2 }  # 候选2 用逗号
+  "key_binder/bindings/@1": 
+    - { when: has_menu, accept: period, send: 3 } # 候选3 用句号
+

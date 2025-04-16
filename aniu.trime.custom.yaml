@@ -1,0 +1,15 @@
+# 本补丁可能有一些比较特别的配置，不喜可删除本文件
+patch:
+  ## 7890四个数字键，改成向上翻页、四选、五选、向下翻页
+  # "preset_keyboards/default/keys/@6/has_menu": Page_Up
+  "preset_keyboards/default/keys/@7/has_menu": select4
+  "preset_keyboards/default/keys/@8/has_menu": select5
+  "preset_keyboards/default/keys/@9/has_menu": Page_Down
+  
+  preset_keys/+:
+    select4: 
+      label: "四"
+      send: 4
+    select5: 
+      label: " 五 "
+      send: 5
