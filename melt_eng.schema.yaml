@@ -16,6 +16,8 @@ schema:
   description: Easy English Nano，只包含少量常用词汇，方便中英文混合输入度方案调用。
 
 switches:
+  - options: [ _key_Hide ]
+    states: [ " 🔻 "]
   - name: ascii_mode
     reset: 0
     states: [ASCII-OFF, ASCII-ON]

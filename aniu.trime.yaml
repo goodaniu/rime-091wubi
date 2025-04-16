@@ -5,7 +5,7 @@
 # Trime custom style settings
 # encoding: utf-8
 
-config_version: "3.0"
+config_version: "3.3.3"
 name: 同文风改(aniu)          #方案名称
 author: 风花絮        #作者信息
 
@@ -98,7 +98,7 @@ style:
   key_long_text_size: 16 #长标签字号
   key_text_size: 24 #键字号
   key_width: 10.0 #键宽，占屏幕宽的百分比
-  keyboards: [.default, letter, default, number, symbols, edit, move, bqrw1, bqrw2, bqrw3, bqrw4, bqrw5, bqrw6, bqqt1, bqqt2, bqqt3, bqqt4, bqqz1, bqqz2, bqqz3, bqqz4, bqqz5, bqqz6, bqpt1, bqpt2, bqhd1, bqhd2, bqhc1, bqhc2, bqhc3, bqlx1, bqlx2, bqlx3, bqlx4, bqlx5, bqlx6, bqkj1, bqkj2, bqkj3, bqkj4, bqkj5, bqfh1, bqfh2, bqfh3, bqfh4, kao_fond, kao_sad, kao_mad, kao_astonished, kao_impotent, kao_happy, numberb] #键盘配置
+  keyboards: [.default, letter, default, number, symbols, edit, func, move, bqrw1, bqrw2, bqrw3, bqrw4, bqrw5, bqrw6, bqqt1, bqqt2, bqqt3, bqqt4, bqqz1, bqqz2, bqqz3, bqqz4, bqqz5, bqqz6, bqpt1, bqpt2, bqhd1, bqhd2, bqhc1, bqhc2, bqhc3, bqlx1, bqlx2, bqlx3, bqlx4, bqlx5, bqlx6, bqkj1, bqkj2, bqkj3, bqkj4, bqkj5, bqfh1, bqfh2, bqfh3, bqfh4, kao_fond, kao_sad, kao_mad, kao_astonished, kao_impotent, kao_happy, numberb] #键盘配置
   label_text_size: 22 #标签字号
   label_font: label.ttf #编标签字体
   latin_font: latin.ttf #西文本体
@@ -481,7 +481,7 @@ liquid_keyboard:
 #键盘布局
 preset_keyboards:
   default:
-    author: "暖暖"
+    author: "aniu"
     name: 26键默认布局
     width: 10
   #  height: 48
@@ -489,16 +489,16 @@ preset_keyboards:
     label_transform: uppercase
     keys: [
     # 数字行
-      {click: '1', swipe_up: '~', label_symbol: '~',__include: mystyle/key_num},
-      {click: '2', swipe_up: "@", label_symbol: '@', __include: mystyle/key_num},
-      {click: '3',swipe_up: "#",  label_symbol: '#',__include: mystyle/key_num},
-      {click: '4', swipe_up: "$", label_symbol: '$',__include: mystyle/key_num},
-      {click: '5',swipe_up: "%", label_symbol: '%',__include: mystyle/key_num},
-      {click: '6',swipe_up: "^", label_symbol: '^',__include: mystyle/key_num},
-      {click: '7',swipe_up: "&", label_symbol: '&',__include: mystyle/key_num},
-      {click: '8',swipe_up: "*", label_symbol: '*',__include: mystyle/key_num},
-      {click: '9',swipe_up: '\', label_symbol: '\',__include: mystyle/key_num},
-      {click: '0', swipe_up: fanxiegang, swipe_down: /, label_symbol: '/',__include: mystyle/key_num},
+      {click: 1, long_click: 1, swipe_up: '~', label_symbol: '~',__include: mystyle/key_num},
+      {click: 2, long_click: 2, swipe_up: "@", label_symbol: '@', __include: mystyle/key_num},
+      {click: 3, long_click: 3, swipe_up: "#",  label_symbol: '#',__include: mystyle/key_num},
+      {click: 4, long_click: 4, swipe_up: "$", label_symbol: '$',__include: mystyle/key_num},
+      {click: 5, long_click: 5, swipe_up: "%", label_symbol: '%',__include: mystyle/key_num},
+      {click: 6, long_click: 6, swipe_up: "^", label_symbol: '^',__include: mystyle/key_num},
+      {click: 7, long_click: 7, swipe_up: "&", label_symbol: '&',__include: mystyle/key_num},
+      {click: 8, long_click: 8, swipe_up: "*", label_symbol: '*',__include: mystyle/key_num},
+      {click: 9, long_click: 9, swipe_up: '\', label_symbol: '\',__include: mystyle/key_num},
+      {click: 0, long_click: 0, swipe_up: fanxiegang, swipe_down: /, label_symbol: '/',__include: mystyle/key_num},
     # 第一行
       {click: q, long_click: Q, label_symbol: '·',swipe_up: '·',__include: mystyle/key_abc1},
       {click: w, long_click: W, label_symbol: '←', swipe_up: Left1,__include: mystyle/key_abc1},
@@ -526,21 +526,24 @@ preset_keyboards:
           swipe_up: '-',
           __include: mystyle/key_abc2},
       {click: 'd', long_click: D,
-          label_symbol: '☑', 
-          swipe_up: select_all,
+          label_symbol: '<>',
+          swipe_up: '<>{Left}',
+          swipe_down: '{khj}{Left}',
           __include: mystyle/key_abc2},
       {click: 'f', long_click: F,
-          label_symbol: '✂', 
-          swipe_up: cut,
+          label_symbol: '[]',
+          swipe_up: '[]{Left}',
+          swipe_down: '{khz}{Left}',
           __include: mystyle/key_abc2},
       {click: 'g', long_click: G,
-          label_symbol: '❐', 
-          swipe_up: copy,
+          label_symbol: '{}',
+          swipe_up: '{}{Left}',
+#          swipe_down: '{khd}{Left}',
           __include: mystyle/key_abc2},
       {click: 'h', long_click: H,
-          label_symbol: '📋', 
-          # swipe_down: paste_clip, 
-          swipe_up: paste,
+          label_symbol: '()',
+          swipe_up: '(){Left}',
+          swipe_down: '{khx}{Left}',
           __include: mystyle/key_abc2},
       {click: 'j', long_click: J,
           label_symbol: '“”',
@@ -550,26 +553,23 @@ preset_keyboards:
       {click: 'k', long_click: K, label_symbol: "'",swipe_up: "danyinhao", swipe_down: '‘’{Left}', __include: mystyle/key_abc2},
       {click: 'l', long_click: L, label_symbol: '"', swipe_up: 'shuangyin', swipe_down: '"', __include: mystyle/key_abc2},
       # 第三行
-      {click: Shift_L, composing: delimiter, swipe_up: Tab, hilited_key_back_color: benter, key_back_color: c1, key_text_color: tbs, width: 11}, 
+      {click: Shift_L, swipe_up: Tab, hilited_key_back_color: benter, key_back_color: c1, key_text_color: tbs, width: 11}, 
       {click: z, long_click: Z,
-          label_symbol: '<>',
-          swipe_up: '<>{Left}',
-          swipe_down: '{khj}{Left}',
+          label_symbol: '☑', 
+          swipe_up: select_all,
           __include: mystyle/key_abc3}, 
       {click: x, long_click: X,
-          label_symbol: '[]',
-          swipe_up: '[]{Left}',
-          swipe_down: '{khz}{Left}',
+          label_symbol: '✂', 
+          swipe_up: cut,
           __include: mystyle/key_abc3}, 
       {click: c, long_click: C,
-          label_symbol: '{}',
-          swipe_up: '{}{Left}',
-#          swipe_down: '{khd}{Left}',
+          label_symbol: '❐', 
+          swipe_up: copy,
           __include: mystyle/key_abc3}, 
       {click: v, long_click: V,
-          label_symbol: '()',
-          swipe_up: '(){Left}',
-          swipe_down: '{khx}{Left}',
+          label_symbol: '📋', 
+          swipe_down: paste_clip, 
+          swipe_up: paste,
           __include: mystyle/key_abc3}, 
       {click: b, long_click: B, label_symbol: ':', swipe_up: ":", __include: mystyle/key_abc3}, 
       {click: n, long_click: N, label_symbol: ';', swipe_up: ";", __include: mystyle/key_abc3}, 
@@ -578,9 +578,9 @@ preset_keyboards:
       # 第四行
       {click: Keyboard_number, swipe_up: Keyboard_numberb, key_back_color: c3, key_text_color: tgn, key_symbol_color: ksc4, long_click: Theme_settings, width: 16}, 
       {click: Mode_switch, key_back_color: c4, key_text_color: tgn, key_text_size: 18, key_symbol_color: ksc4, long_click: Keyboard_func, swipe_up: Keyboard_bqrw, width: 14}, 
-      {click: space, ascii: space3, __include: mystyle/key_abc4, long_click: Menu, swipe_left: Left, swipe_right: Right, swipe_up: Tab2, width: 26}, 
-      {click: ",", key_back_color: c5, key_text_color: th4, key_symbol_color: th4, label: "，", long_click: liquid_keyboard_ascii, swipe_up: "!", label_symbol: "!", width: 14}, 
-      {click: ., key_back_color: c6, key_text_color: th4, key_symbol_color: th4, label: "。", long_click: liquid_keyboard_markdown, swipe_up: "?",label_symbol: "?", width: 14}, 
+      {click: space, ascii: space3, __include: mystyle/key_abc4, long_click: Menu, swipe_left: Left, swipe_right: Right, swipe_up: Tab2, width: 26, has_menu: select1}, 
+      {click: ",", key_back_color: c5, key_text_color: th4, key_symbol_color: th4, label: "，", long_click: liquid_keyboard_ascii, swipe_up: "!", label_symbol: "!", width: 14, has_menu: select2}, 
+      {click: ., key_back_color: c6, key_text_color: th4, key_symbol_color: th4, label: "。", long_click: liquid_keyboard_markdown, swipe_up: "?",label_symbol: "?", width: 14, has_menu: select3}, 
       {click: Return, composing: Return1, key_back_color: c7, key_text_color: tenter, swipe_up: Escape, width: 16}]
     
 ##=======default键盘结束========
@@ -703,7 +703,7 @@ preset_keyboards:
       - {click: Return, composing: Return1, swipe_up: Escape, width: 15, key_back_color: benter, key_text_color: tenter}
 
   number:
-    author: "暖暖"
+    author: "aniu"
     name: 数字+
     width: 16.6
    # height: 48
@@ -3857,7 +3857,16 @@ preset_keys:
     # send: function
     # command: run
     # option: 'com.osfans.trime.action.SYNC_USER_DATA'
-    
+  select1: 
+    label: "首选"
+    send: 1
+  select2: 
+    label: "次选"
+    send: 2
+  select3: 
+    label: "三选"
+    send: 3
+  
   #========Markdown=======
   表格: {commit: "|||\n|:-:|:-:|\n|||", label: 表格, functional: false}
   代码块: {commit: "```\n\n```", label: 代码块, functional: false}

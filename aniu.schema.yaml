@@ -20,12 +20,12 @@ switches:
   - name: ascii_punct
     states: [ 。，, ．， ]
   - name: full_shape
-    states: [ 半角, 全角 ]
+    states: [ 半, 全 ]
   - name: extended_charset
-    states: [ 常用, 扩展 ]
+    states: [ 常, 扩 ]
   - name: zh_trad
     reset: 0    # 初始状态为 0: 简 -> 简 1: 简 -> 繁
-    states: [ 简体, 繁体 ]
+    states: [ 简, 繁 ]
   - name: ascii_mode
     reset: 0
     states: [ 中, En ]
@@ -63,16 +63,13 @@ engine:
 
 # 自动造词功能：参阅： https://github.com/KyleBing/rime-wubi86-jidian#6-%E5%BC%80%E5%90%AF%E8%87%AA%E5%8A%A8%E9%80%A0%E8%AF%8D
 
-menu:
-  page_size: 7
-style:
-  horizontal: false
+menu/page_size: 5
 
 speller:
   max_code_length: 4                    # 四码上屏
   auto_select: true                     # 四码唯一时，自动上屏
   auto_clear: max_length                # 空码时自动清空
-  alphabet: /zyxwvutsrqponmlkjihgfedcba  #为了使用symbols.yaml中的符号启用这一行
+  alphabet: /zyxwvutsrqponmlkjihgfedcba  # 为了使用symbols.yaml中的符号启用这一行
 translator:
   dictionary: aniu             # 翻译器将调取此字典文件
   enable_charset_filter: true           # 开启字符集过滤
@@ -126,7 +123,7 @@ punctuator:
 key_binder:
   import_preset: default
   bindings:
-    - { when: has_menu, accept: z, send: 3 } # 候选3 用z号
+    - { when: has_menu, accept: z, send: 3 } # 候选3 用z号，保持这项在第一行，因为手机上的补丁aniu.custom.yaml要取消它
     - { when: has_menu, accept: 8, send: 4 } # 候选4 用8号
     - { when: has_menu, accept: 9, send: 5 } # 候选5 用9号
 

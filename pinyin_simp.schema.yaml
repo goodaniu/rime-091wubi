@@ -10,16 +10,18 @@ schema:
   description: |
     源自 Android 拼音
   dependencies:
-    - stroke
+    # - stroke
 
 switches:
-  - name: ascii_mode
-    reset: 0
-    states: [ 中文, 西文 ]
-  - name: full_shape
-    states: [ 半角, 全角 ]
   - name: ascii_punct
     states: [ 。，, ．， ]
+  - name: ascii_mode
+    reset: 0
+    states: [ 中, En ]
+  - name: full_shape
+    states: [ 半, 全 ]
+
+menu/page_size: 7
 
 engine:
   processors:
@@ -41,9 +43,11 @@ engine:
     - punct_translator
     - script_translator
     - reverse_lookup_translator
+  filter:
+    - uniquifier
 
 speller:
-  alphabet: zyxwvutsrqponmlkjihgfedcba
+  alphabet: /zyxwvutsrqponmlkjihgfedcba
   delimiter: " '"
   algebra:
     - abbrev/^([a-z]).+$/$1/
@@ -67,13 +71,13 @@ translator:
     - xform/([jqxy])v/$1u/
 
 reverse_lookup:
-  dictionary: stroke
+  dictionary: aniu
   enable_completion: true
   prefix: "`"
   suffix: "'"
-  tips: 〔笔画〕
+  tips: 〔五笔〕
   preedit_format:
-    - xlit/hspnz/一丨丿丶乙/
+    # - xlit/hspnz/一丨丿丶乙/
 
 punctuator:
   import_preset: default

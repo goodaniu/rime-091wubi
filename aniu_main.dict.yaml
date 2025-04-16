@@ -861,7 +861,8 @@ ActiveX	actx	100
 芆	acyu	5
 英勇就义	acyy	100
 若	ad	100
-项	ad	90
+苦	ad	90
+项	adm	100
 藏	ad	80
 莽	ada	100
 蕻	ada	90
@@ -948,7 +949,6 @@ ActiveX	actx	100
 萇	adeu	5
 莀	adeu	5
 苦脸	adew	100
-苦	adf	100
 若干	adf	90
 蓝奏云	adf	80
 劳而无功	adfa	100
@@ -1091,10 +1091,10 @@ adidas	adis	90
 若果	adls	90
 项圈	adlu	100
 苦累	adlx	100
-admin	adm	100
-admurder	adm	90
-A面	adm	80
-蒇	adm	70
+admin	adm	90
+admurder	adm	80
+A面	adm	70
+蒇	adm	60
 䓴	admd	5
 世袭罔替	admf	100
 荣盛购物广场	admf	90
@@ -1307,8 +1307,8 @@ A3纸	adx	100
 荐文	adyy	90
 藏文	adyy	80
 荗	adyy	5
-菜	ae	100
-散	ae	90
+菜	ae	90
+散	ae	100
 藤	ae	80
 七月	ae	70
 🥗	ae	5
@@ -1593,9 +1593,9 @@ AE86	aemu	100
 蓝月亮	aeyp	100
 菜谱	aeyu	100
 散文	aeyy	100
-某	af	100
-著	af	90
-勒	af	80
+某	af	90
+著	af	80
+勒	afl	100
 劳动节	afa	100
 东城区	afa	90
 鞯	afa	80
@@ -1863,7 +1863,7 @@ Affinity	affy	90
 莍	afiu	5
 苿	afiu	5
 甘当	afiv	100
-革	afj	100
+革	af	100
 或者是	afj	90
 靼	afj	80
 勒紧	afjc	100
@@ -1910,9 +1910,9 @@ Affinity	affy	90
 某只	afku	100
 鞼	afku	5
 䖅	afkw	5
-蕾	afl	100
-劳动力	afl	90
-攻击力	afl	80
+蕾	afl	90
+劳动力	afl	80
+攻击力	afl	70
 鞇	afld	5
 世博园	aflf	100
 某国	aflg	100
@@ -3650,8 +3650,7 @@ AITO	aito	100
 蒗	aiyv	100
 范文	aiyy	100
 莫	aj	100
-蓝	aj	90
-菲	aj	80
+蓝	ajt	100
 🟦	aj	5
 🩵	aj	5
 Ajax	aja	100
@@ -3709,8 +3708,8 @@ Ajax	ajax	100
 草鱼	ajct	100
 蓝鲸	ajcy	100
 莫非	ajd	100
-匪	ajd	90
-菲	ajd	80
+匪	ajd	80
+菲	ajd	90
 攻坚克难	ajdc	100
 莫大	ajdd	100
 蓝厂	ajdg	100
@@ -3802,7 +3801,7 @@ Ajax	ajax	100
 葛平	ajgu	100
 黄景瑜	ajgw	100
 匪夷	ajgx	100
-划	ajh	100
+划	aj	90
 攻坚战	ajh	90
 苍蝇馆	ajh	80
 苍蝇馆子	ajhb	100
@@ -3839,7 +3838,7 @@ Ajax	ajax	100
 蓝光	ajiq	100
 暮光	ajiq	90
 蓝海	ajit	100
-草	ajj	100
+草	aj	80
 暮	ajj	90
 莫非是	ajj	80
 菖	ajj	70
@@ -4020,8 +4019,8 @@ Ajax	ajax	100
 草根	ajsv	100
 错词→	ajsv	90
 莫明其妙	ajsv	80
-蔓延	ajt	100
-划算	ajt	90
+蔓延	ajt	90
+划算	ajt	80
 蓝笔	ajte	100
 蔓延	ajth	100
 划算	ajth	90
@@ -4824,8 +4823,8 @@ A4纸	alx	100
 世界文化	alyw	100
 功率	alyx	100
 世界主义	alyy	100
-黄	am	100
-英	am	90
+黄	am	90
+英	am	100
 恐	am	80
 🟨	am	5
 🟡	am	5
@@ -5825,9 +5824,9 @@ A座	aow	100
 䕲	aoym	5
 黄灯亮了等一等	aoyt	100
 工业设计	aoyy	100
-蒙	ap	100
+劳	ap	100
+蒙	apg	110
 芳	ap	90
-芝	ap	80
 Apache	apa	100
 劳工	apaa	100
 莞式	apaa	90
@@ -5994,8 +5993,7 @@ APK	apk	90
 营养物	apkq	100
 营养物质	apkr	100
 苟富贵，勿相忘	apky	100
-劳	apl	100
-荤	apl	90
+荤	apl	100
 蒙恩	apld	100
 芝罘	aplg	100
 黄袍加身	aplh	100
@@ -117374,10 +117372,10 @@ no zuo no die why you try	nxnt	100
 民主主义	nyyy	100
 改良主义	nyyy	90
 忟	nyyy	5
-社	o	100
 为	o	100
 应	o	90
 米	o	80
+社	o	70
 度	oa	100
 烧	oa	90
 席	oa	80
@@ -118645,7 +118643,7 @@ OEM高度	oemo	100
 烳	oeyy	5
 烐	oeyy	5
 庄	of	90
-备	of	70
+备	of	100
 迷魂药	ofa	100
 启动项	ofa	90
 社工	ofaa	100
@@ -148319,6 +148317,7 @@ root	root	100
 攨	rpry	90
 探	rps	100
 拧	rps	90
+打补丁	rps	85
 手写板	rps	80
 制空权	rpsc	100
 近期	rpse	100
