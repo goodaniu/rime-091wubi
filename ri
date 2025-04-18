@@ -1,34 +1,42 @@
 #!/usr/bin/env bash
-# set -e
+set -e
 
 # 进入Rime工作目录
-#cd ~/.local/share/fcitx5/rime
-cd ~/doc/mydot/.local/share/fcitx5/rime
+rpath=~/.local/share/fcitx5/rime
+mpath=~/doc/mydot/.local/share/fcitx5/rime
+cd $mpath
 
 dictmain=aniu_main.dict.yaml
 dictspz=aniu_spz.dict.yaml
 dictpri=aniu_pri.dict.yaml
 
+
 function chaxun(){
 	# 以编码查询
-	cd ~/.local/share/fcitx5/rime
-	if echo $1 |grep -q ",";then
-		local str1=`echo $1|cut -d "," -f1`
-		echo -e "\n\e[33m列出形如\e[0m$str1\e[33m的单字编码：\n————————————————————————————————————\e[0m"
+	cd $rpath
+	if echo $1 |grep -q ",$";then
+		local str1=`echo $1|sed "s/,$//"`
+		echo -e "\n\e[33m列出编码为\e[0m$str1\e[33m的单字：\n————————————————————————————————————\e[0m"
         grep -Pn "^.\t$str1\b" $dictmain $dictspz |sed -r "s/aniu_|.dict.yaml//g"
 		echo -e "\e[33m————————————————————————————————————\e[0m"
-		return
+    elif echo $1 | grep -q "，$";then
+	    # 以汉字查询编码
+        local str1=$(echo $1|sed "s/，$//")
+	    echo -e "\n\e[33m查询词条中包含\e[0m$str1\e[33m的项：\n————————————————————————————————————\e[0m"
+        grep -Pn --color=always "$str1" $dictmain|awk -F "\t" '$1 ~ /'$str1'/ && NF>2{print "\033[35mmain:\033[0m" $0}'
+        grep -Pn --color=always "$str1" $dictpri|awk -F "\t" '$1 ~ /'$str1'/ && NF>2{print "\033[35mpri:\033[0m" $0}'
+        # grep -Pn --color=always "^[^\t]*$str1" $dictmain $dictpri |sed -r "s/aniu_|.dict.yaml//g"
+	    echo -e "\e[33m————————————————————————————————————\e[0m"
 	elif echo $1 |grep -q "[a-z]"; then
-		echo -e "\n\e[33m列出形如\e[0m$1\e[33m的编码：\n————————————————————————————————————\e[0m"
-		grep -Pn "\t$1\t" $dictmain $dictpri|sed -r "s/aniu_|.dict.yaml//g"
+		echo -e "\n\e[33m列出编码为\e[0m$1\e[33m的词条：\n————————————————————————————————————\e[0m"
+		grep -Pn --color=always "\t$1\t" $dictmain $dictpri|sed -r "s/aniu_|.dict.yaml//g"
 		echo -e "\e[33m————————————————————————————————————\e[0m"
-		return
+    else
+	    # 以汉字查询编码
+	    echo -e "\n\e[33m查询词条\e[0m$1\e[33m的编码：\n————————————————————————————————————\e[0m"
+        grep -Pn --color=always "^$1\t" $dictmain $dictspz $dictpri|sed -r "s/aniu_|.dict.yaml//g"
+	    echo -e "\e[33m————————————————————————————————————\e[0m"
 	fi
-	# 以汉字查询编码
-	echo -e "\n\e[33m查询\e[0m$1\e[33m的编码：\n————————————————————————————————————\e[0m"
-	grep -Pn  "^$1\t" $dictmain $dictspz $dictpri|sed -r "s/aniu_|.dict.yaml//g"
-
-	echo -e "\e[33m————————————————————————————————————\e[0m"
 #     python -c "print('\033[1;34m=\033[0m'*10)" # 重复打印“=”
 }
 
@@ -122,6 +130,8 @@ case "$1" in
             awk 'NF>2{gsub(/ +/,"\t");print}' $2 >> $dictmain
         fi
       ;;
+  --sync)
+        rime_dict_manager -s;;
     *)
 		chaxun $@
 		;;
