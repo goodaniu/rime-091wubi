@@ -3654,9 +3654,10 @@ AITO	aito	100
 草	aj	80
 🟦	aj	5
 🩵	aj	5
-Ajax	aja	100
+蓝牙	aja	100
 萌芽	aja	90
 范晓萱	aja	80
+Ajax	aja	60
 萌芽	ajaa	100
 草莽	ajad	100
 莫若	ajad	90
@@ -16044,8 +16045,8 @@ cfop	cfop	100
 又来了	cgb	100
 又来了	cgbn	100
 鲀	cgbn	5
-对不对	cgc	100
-能不能	cgc	90
+能不能	cgc	100
+对不对	cgc	90
 又不能	cgc	80
 能不能用	cgce	100
 又不能	cgce	90
@@ -110738,8 +110739,8 @@ Mysql	mysq	90
 㞶	myyy	5
 已	n	100
 性	n	90
-己	n	85
-书	n	80
+书	n	85
+己	n	80
 📒	n	5
 📓	n	5
 📔	n	5
@@ -174521,9 +174522,9 @@ U盘	uel	100
 半月谈	ueyo	100
 前夜	ueyw	100
 前文	ueyy	100
-兰	uf	100
-半	uf	90
-装	uf	80
+半	uf	100
+装	uf	90
+兰	uf	80
 兰花	ufa	100
 新都区	ufa	90
 头戴式	ufa	80
