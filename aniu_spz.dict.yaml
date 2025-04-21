@@ -10,7 +10,7 @@ columns:    # 码表格式
   - text    # 文字
   - code    # 输入码
   - weight  # 权重
-  - comment    # 注释
+  - note    # 注释
 
 
 sort: by_weight

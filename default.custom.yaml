@@ -21,7 +21,7 @@ patch:
 
   switcher:
     hotkeys:        # 弹出菜单的快捷键
-      - "Control+0"
+      - "Control+grave"
       - "Shift+Control+0"
     abbreviate_options: true
     caption: "【 输入法设置 】"

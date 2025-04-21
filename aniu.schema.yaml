@@ -63,7 +63,8 @@ engine:
 
 # 自动造词功能：参阅： https://github.com/KyleBing/rime-wubi86-jidian#6-%E5%BC%80%E5%90%AF%E8%87%AA%E5%8A%A8%E9%80%A0%E8%AF%8D
 
-menu/page_size: 5
+menu:
+  page_size: 5
 
 speller:
   max_code_length: 4                    # 四码上屏
