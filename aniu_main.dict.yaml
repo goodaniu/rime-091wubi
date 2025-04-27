@@ -4827,7 +4827,7 @@ A4纸	alx	100
 世界主义	alyy	100
 英	am	100
 黄	am	90
-恐	am	80
+恐	amy	110
 🟨	am	5
 🟡	am	5
 蒲公英	ama	100
@@ -5260,7 +5260,6 @@ AMOLED屏	amon	100
 英音	amxy	100
 巩	amy	100
 芃	amy	90
-銎	amy	80
 七分熟	amyb	100
 聓	amyb	5
 英译	amyc	100
@@ -6897,7 +6896,6 @@ array	arry	90
 茅盾文学奖	aryu	100
 欧文	aryy	100
 东西	as	100
-艺术	as	90
 茜	as	80
 🎨	as	5
 艺术节	asa	100
@@ -11432,6 +11430,7 @@ B612咔叽	bkkm	90
 B超	bkv	90
 也只好	bkvb	100
 了吗？	bkw	100
+了吧？	bkw	90
 职代	bkwa	100
 出口创汇	bkwi	100
 职位	bkwu	100
@@ -11443,8 +11442,8 @@ B超	bkv	90
 职高	bkyl	100
 陡变	bkyo	100
 随口说说	bkyy	100
-际	bl	110
-阵	bl	100
+际	bl	100
+阵	blg	100
 孟	bl	90
 阵式	bla	100
 阵式	blaa	100
@@ -11482,7 +11481,7 @@ blingbling的	blbr	100
 🌦	blfg	5
 阿里云大学	blfi	100
 阵雪	blfv	100
-阼	blg	100
+阼	blg	80
 取回来	blg	90
 阵形	blga	100
 阵型	blga	90
@@ -13398,7 +13397,6 @@ BetterTouchTool	btt	90
 凶许	btyt	100
 联	bu	100
 陪	bu	90
-聪	bu	80
 也将	bu	70
 陪葬	bua	100
 联共	buag	100
@@ -15843,8 +15841,8 @@ CEO	ceo	90
 对内	cfmw	100
 鲍勃·迪伦	cfmw	90
 参考书	cfn	100
-怼	cfn	90
-能动性	cfn	80
+能动性	cfn	90
+怼	cfn	80
 圣殿	cfna	100
 参考书目	cfnh	100
 参考书	cfnn	100
@@ -16986,7 +16984,6 @@ CLTC工况	cltu	100
 双边主义	clyy	100
 观	cm	100
 以内	cm	90
-骋	cm	80
 鳢	cma	100
 难分难舍	cmc	100
 难分难解	cmcq	100
@@ -17061,7 +17058,6 @@ Command+Y	cmdy	90
 鲷	cmfk	100
 观塘	cmfo	100
 骋	cmg	100
-骚凹瑞	cmg	90
 预见到	cmg	80
 预见到	cmgc	100
 观球	cmgf	100
@@ -19596,7 +19592,6 @@ Ctrl+Y	cty	100
 双重认证	ctyy	100
 难道	cu	100
 以前	cu	90
-骥	cu	80
 骈	cua	100
 鲁冰花	cua	90
 鲁冰花	cuaw	100
@@ -19658,7 +19653,6 @@ C站	cuhk	100
 难道只有我一个人觉得	cukh	100
 通商口岸	cukm	100
 对瓶吹	cukq	100
-骥	cul	100
 骑单车	cul	90
 马六甲	cul	80
 以前连身体都进得去的人，现在连朋友圈都进不去了	culb	100
@@ -22542,7 +22536,6 @@ Desktop	desp	100
 砖	dfn	100
 破坏性	dfn	90
 威士忌	dfn	80
-刳	dfn	70
 🧱	dfn	5
 🥃	dfn	5
 奇哉怪也	dfnb	100
@@ -26282,8 +26275,8 @@ DNS	dns	100
 破壁机	dns	90
 成材	dnsf	100
 硬性要求	dnsf	90
-尤其	dnsg	100
-成本	dnsg	90
+成本	dnsg	100
+尤其	dnsg	90
 感情生活	dnsi	100
 DNS服务器	dnsk	100
 大异其趣	dnsk	90
@@ -49705,7 +49698,6 @@ GDP	gdp	90
 静态	gedy	100
 表态	gedy	90
 一般而言	gedy	80
-玖月奇迹	gedy	70
 一般而论	gedy	60
 不服气	gee	100
 一股脑	gee	90
@@ -50545,7 +50537,6 @@ get不到	getg	90
 球类	gfod	100
 五十度灰	gfod	90
 不幸福	gfog	100
-玩应	gfoi	100
 一塌糊涂	gfoi	90
 天真烂漫	gfoi	80
 一声炮响	gfok	100
@@ -52287,15 +52278,15 @@ gaygay的	ggr	80
 下流	ghiy	100
 下注	ghiy	90
 不止是	ghj	100
-五步蛇	ghj	90
-还得是	ghj	70
+还得是	ghj	90
+五步蛇	ghj	70
 来得早不如来得巧	ghja	100
 来得早，不如来得巧	ghja	90
 一些日子	ghjb	100
 下辈	ghjd	100
 一身是胆	ghje	100
-正题	ghjg	100
-正是	ghjg	90
+正是	ghjg	100
+正题	ghjg	90
 不止是	ghjg	80
 还得是	ghjg	70
 一点是一点	ghjh	100
@@ -66523,6 +66514,7 @@ HP	hp	70
 饭	hr	100
 瞧	hr	90
 御	hr	80
+上的	hr	70
 🍚	hr	5
 虚拟式	hra	100
 卡扎菲	hra	90
@@ -73979,6 +73971,7 @@ IGMP	igmp	100
 没时间解释了，快上车	ijul	90
 温疫	ijum	100
 滥交	ijur	100
+光电效应	ijuo	100	物
 漫道	ijut	100
 蛍	ijuu	5
 湿冷	ijuw	100
@@ -80944,6 +80937,7 @@ Java	java	100
 最远	jbfq	100
 师出无名	jbfq	90
 最老	jbfx	100
+量子场	jbfv	100	物
 最坑	jbfy	100
 电子琴	jbg	100
 冒出来	jbg	90
@@ -92519,6 +92513,7 @@ KMSpico	kms	70
 遗迹	kmyo	100
 牡丹亭	kmyp	100
 贵州	kmyt	100
+吊诡	kmyq	100
 遗诏	kmyv	100
 中央文件	kmyw	100
 㕨	kmyy	5
@@ -94218,7 +94213,6 @@ K歌之王	kspg	90
 只要你乖给你买条gai	kswg	90
 整个	kswh	100
 整修	kswh	90
-只要你乖给你买条街	kswh	80
 整盒	kswl	100
 整段	kswm	100
 整份	kswm	90
@@ -97071,6 +97065,7 @@ LCD永不为奴	lcdv	100
 跖疣	ldud	100
 奋斗	lduf	100
 因病	ldug	100
+围三阙一	ldug	90	成
 轑	ldui	5
 蹽	ldui	5
 软硬兼施	ldup	100
@@ -137252,6 +137247,7 @@ QoS	qos	100
 危害	qp	100
 解放	qp	90
 名字	qp	80
+金额	qp	70
 解放区	qpa	100
 铁裆功	qpa	90
 鎈	qpag	5
@@ -153785,6 +153781,7 @@ Ruby	ruby	100
 挤兑	ryuk	100
 抗癌	ryuk	90
 抗疫	ryum	100
+撤单	ryul	100	股
 反文旁	ryup	100
 折文旁	ryup	90
 斥资	ryuq	100
@@ -159426,6 +159423,7 @@ SOS	sos	100
 进	sp	100
 样	sp	90
 其实	sp	80
+其它	sp	70
 样式	spa	100
 槎	spa	90
 Space	spa	80
@@ -164566,8 +164564,8 @@ TD-SCDMA	tdsc	90
 短篇	tdto	100
 知悉	tdto	90
 乱翻	tdto	80
-知秋	tdto	70
-第三季度	tdto	60
+第三季度	tdto	70
+知秋	tdto	60
 适逢	tdtp	100
 利在千秋	tdtt	100
 知乎	tdtu	100
@@ -167656,6 +167654,7 @@ tips	tips	100
 香闺	tjuf	100
 长时间	tjuj	100
 短时间	tjuj	90
+黎明前的黑暗	tjuj	80	常
 香辣	tjuk	100
 和时间赛跑	tjul	100
 短时间内	tjum	100
@@ -179966,6 +179965,7 @@ USB线	usbx	100
 闲笔	uste	100
 尊重	ustg	100
 单机版	ustn	100
+资本利得	usth	100	股
 减配版	ustn	90
 闲愁	usto	100
 闲篇	usto	90
@@ -190049,8 +190049,8 @@ V领	vwp	90
 借喻	wakw	90
 含英咀华	wakw	80
 傼	wakw	5
-段落轴	wal	100
-全世界	wal	90
+全世界	wal	100
+段落轴	wal	90
 全攻略	wal	80
 袋里	wala	100
 借车	walg	100
@@ -191225,6 +191225,7 @@ wdnmd	wdnm	100
 仍	we	100
 愈	we	90
 俱	we	80
+使用	we	70	日
 候选项	wea	100
 人造革	wea	90
 佣工	weaa	100
@@ -197048,6 +197049,7 @@ WPS Office	wpso	100
 低幼	wqxl	100
 保留意见	wqxm	100
 合金弹头	wqxu	100
+低维	wqxr	100	物
 仰韶	wqxv	100
 你给	wqxw	100
 似然比	wqxx	100
@@ -203957,6 +203959,7 @@ X光片	xitn	100
 幼	xl	90
 比较	xl	80	个
 张国荣	xla	100
+细节	xla	110
 幼芽	xlaa	100
 细节	xlab	100
 细菜	xlae	100
